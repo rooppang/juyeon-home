@@ -9,50 +9,52 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        body { font-family: 'Noto Sans KR', sans-serif; word-break: keep-all; }
-        
-        /* 히어로 섹션 (메인 배너) */
+        body { font-family: 'Noto Sans KR', sans-serif; word-break: keep-all; overflow-x: hidden; }
+        .text-primary-custom { color: #004ea2; }
+        .bg-primary-custom { background-color: #004ea2; }
+        .section-padding { padding: 100px 0; }
+        .section-title { font-weight: 800; margin-bottom: 60px; text-align: center; }
+        .section-title span { color: #004ea2; }
+
+        /* 개선된 히어로 섹션 */
         .hero-section {
-            /* 실제 배경 이미지가 있다면 아래 URL을 변경하세요 */
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://placehold.co/1920x800/003366/FFFFFF?text=Infra+Structure+Image');
+            /* 실제 이미지 파일명(main-bg.jpg) 적용 및 오버레이 강화 */
+            background: linear-gradient(rgba(0, 20, 50, 0.7), rgba(0, 20, 50, 0.7)), url('main-bg.jpg');
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 180px 0;
+            height: 90vh; /* 화면 높이의 90% */
+            min-height: 600px;
+            display: flex;
+            align-items: center;
             text-align: center;
         }
+        .hero-title { font-size: 3.5rem; font-weight: 800; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
 
-        /* 주요 컬러 설정 */
-        .text-primary-custom { color: #004ea2; } /* 주연의 신뢰감을 주는 파란색 */
-        .bg-primary-custom { background-color: #004ea2; color: white; }
-        
-        /* 섹션 공통 스타일 */
-        .section-padding { padding: 80px 0; }
-        .section-title { font-weight: 700; margin-bottom: 50px; text-align: center; position: relative; }
-        .section-title::after {
-            content: ''; width: 60px; height: 3px; background-color: #004ea2;
-            position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%);
-        }
+        /* 개선된 사업분야 카드 */
+        .biz-card { border: none; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: transform 0.3s; height: 100%; }
+        .biz-card:hover { transform: translateY(-10px); }
+        .biz-card-img { height: 250px; object-fit: cover; }
+        .biz-card-body { padding: 30px; }
 
-        /* 카드 호버 효과 */
-        .business-card { transition: transform 0.3s; border: none; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        .business-card:hover { transform: translateY(-10px); }
+        /* CEO 섹션 스타일 */
+        .ceo-img { border-radius: 15px; box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
     </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm py-3">
         <div class="container">
-            <a class="navbar-brand fw-bold text-primary-custom" href="#"><i class="fas fa-building me-2"></i>(주)주연</a>
+            <a class="navbar-brand fw-bold fs-3 text-primary-custom" href="#"><i class="fas fa-building me-2"></i>(주)주연</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">회사소개</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#business">사업분야</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#history">연혁/실적</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">오시는길</a></li>
+                <ul class="navbar-nav ms-auto fw-bold">
+                    <li class="nav-item"><a class="nav-link px-3" href="#about">회사소개</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#business">사업분야</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#history">주요실적</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#contact">오시는길</a></li>
                 </ul>
             </div>
         </div>
@@ -60,188 +62,151 @@
 
     <header class="hero-section">
         <div class="container">
-            <h1 class="display-4 fw-bold mb-4">글로벌 인프라사업 전문기업</h1>
-            <p class="lead mb-4 fs-4">혁신적인 인프라 솔루션으로 지속 가능한 미래를 선도합니다.<br>전기·통신·소방·기계설비의 Total Solution Partner</p>
-            <div class="mt-5">
-                <a href="#contact" class="btn btn-primary btn-lg px-5 py-3 fw-bold">견적 및 상담 문의</a>
-            </div>
+            <h1 class="hero-title mb-4">글로벌 인프라사업의<br>새로운 기준, (주)주연</h1>
+            <p class="lead mb-5 fs-5 opacity-75">전기·통신·소방·기계설비 토탈 솔루션 파트너<br>설계부터 시공, 유지관리까지 완벽함을 추구합니다.</p>
+            <a href="#contact" class="btn btn-primary-custom btn-lg px-5 py-3 fw-bold rounded-pill shadow">견적 문의하기 <i class="fas fa-arrow-right ms-2"></i></a>
         </div>
     </header>
 
-    <section class="py-5 bg-light">
+    <section id="about" class="section-padding">
         <div class="container">
-            <div class="row text-center g-4">
-                <div class="col-md-3">
-                    <div class="p-3">
-                        <i class="fas fa-history fa-3x text-primary-custom mb-3"></i>
-                        <h3 class="fw-bold">2013년</h3>
-                        <p class="text-muted">설립 (업력 12년+)</p> </div>
+            <div class="row align-items-center gy-5">
+                <div class="col-lg-5">
+                    <img src="ceo.jpg" class="img-fluid ceo-img w-100" alt="조양숙 대표이사">
                 </div>
-                <div class="col-md-3">
-                    <div class="p-3">
-                        <i class="fas fa-users fa-3x text-primary-custom mb-3"></i>
-                        <h3 class="fw-bold">31명</h3>
-                        <p class="text-muted">전문 기술 인력</p> </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="p-3">
-                        <i class="fas fa-certificate fa-3x text-primary-custom mb-3"></i>
-                        <h3 class="fw-bold">ISO 인증</h3>
-                        <p class="text-muted">9001/14001/45001 보유</p> </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="p-3">
-                        <i class="fas fa-chart-line fa-3x text-primary-custom mb-3"></i>
-                        <h3 class="fw-bold">Main-Biz</h3>
-                        <p class="text-muted">경영혁신형 중소기업</p> </div>
-                </div>
+                <div class="col-lg-7 ps-lg-5">
+                    <h5 class="text-primary-custom fw-bold mb-3">CEO Message</h5>
+                    <h2 class="fw-bold mb-4 lh-base">"기본과 원칙을 준수하며<br>고객의 가치를 최우선으로 생각합니다."</h2>
+                    <p class="lead text-muted mb-4">
+                        안녕하십니까, 주식회사 주연 대표이사 조양숙입니다.<br>
+                        저희 (주)주연은 2013년 설립 이래, 투명한 정도경영과 끊임없는 기술 혁신을 통해 성장해왔습니다.
+                    </p>
+                    <p class="mb-4">
+                        숙련된 전문 기술 인력과 풍부한 현장 경험을 바탕으로 전기, 정보통신, 소방, 기계설비 분야에서 최적의 솔루션을 제공하고 있습니다. 또한, 기업부설연구소를 통한 지속적인 R&D 투자로 자동제어장치 직접생산 등 기술 경쟁력을 확보하였습니다. 앞으로도 고객 여러분께 최고의 품질과 신뢰로 보답하겠습니다.
+                    </p>
+                    <div class="row g-3 mb-4">
+                        <div class="col-sm-4"><div class="p-3 bg-light rounded text-center"><h4 class="fw-bold mb-0 text-primary-custom">2013년</h4><small>설립</small></div></div>
+                        <div class="col-sm-4"><div class="p-3 bg-light rounded text-center"><h4 class="fw-bold mb-0 text-primary-custom">31명</h4><small>전문인력</small></div></div>
+                        <div class="col-sm-4"><div class="p-3 bg-light rounded text-center"><h4 class="fw-bold mb-0 text-primary-custom">ISO</h4><small>통합인증</small></div></div>
+                    </div>
+                    <img src="https://fakeimg.pl/150x50/ffffff/000000/?text=SIGNATURE&font=noto" alt="서명" class="opacity-50"> </div>
             </div>
         </div>
     </section>
 
-    <section id="business" class="section-padding">
+    <section id="business" class="section-padding bg-light">
         <div class="container">
-            <h2 class="section-title">주요 사업분야</h2>
-            <p class="text-center mb-5 text-muted">설계부터 시공, 유지관리, 직접생산까지 원스톱 솔루션을 제공합니다.</p>
-            
+            <h2 class="section-title">BUSINESS <span>AREA</span></h2>
             <div class="row g-4">
                 <div class="col-md-4">
-                    <div class="card business-card h-100">
-                        <div class="card-body text-center p-4">
-                            <i class="fas fa-bolt fa-2x text-warning mb-3"></i>
-                            <h4 class="card-title fw-bold">전기·통신 공사</h4>
-                            <p class="card-text text-start mt-3">
-                                <small>
-                                [cite_start]● 전기공사업 면허 등록 [cite: 90]<br>
-                                [cite_start]● 정보통신공사업 등록 [cite: 151]<br>
-                                [cite_start]● 배전반 및 전기 자동제어반 제조 [cite: 148]
-                                </small>
-                            </p>
+                    <div class="card biz-card">
+                        <img src="biz-1.jpg" class="card-img-top biz-card-img" alt="전기통신공사 현장">
+                        <div class="card-body biz-card-body">
+                            <h4 class="card-title fw-bold mb-3"><i class="fas fa-bolt text-warning me-2"></i>전기·통신 공사</h4>
+                            <p class="card-text text-muted mb-4">안정적인 전력 공급과 최적의 통신 환경을 구축합니다.</p>
+                            <ul class="list-unstyled small text-secondary">
+                                <li class="mb-2"><i class="fas fa-check me-2"></i>전기공사업 면허 보유</li>
+                                <li class="mb-2"><i class="fas fa-check me-2"></i>정보통신공사업 등록</li>
+                                <li><i class="fas fa-check me-2"></i>수변전설비 / 배전반 설치</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card business-card h-100">
-                        <div class="card-body text-center p-4">
-                            <i class="fas fa-fire-extinguisher fa-2x text-danger mb-3"></i>
-                            <h4 class="card-title fw-bold">소방·기계 설비</h4>
-                            <p class="card-text text-start mt-3">
-                                <small>
-                                [cite_start]● 전문소방시설 공사업 [cite: 399]<br>
-                                [cite_start]● 기계설비 가스공사업 [cite: 150]<br>
-                                [cite_start]● 기계설비 제작업 등기 [cite: 91]
-                                </small>
-                            </p>
+                    <div class="card biz-card">
+                        <img src="biz-2.jpg" class="card-img-top biz-card-img" alt="소방기계설비 현장">
+                        <div class="card-body biz-card-body">
+                            <h4 class="card-title fw-bold mb-3"><i class="fas fa-fire-extinguisher text-danger me-2"></i>소방·기계 설비</h4>
+                            <p class="card-text text-muted mb-4">안전을 최우선으로 하는 소방 및 기계 설비 시공을 약속합니다.</p>
+                            <ul class="list-unstyled small text-secondary">
+                                <li class="mb-2"><i class="fas fa-check me-2"></i>전문소방시설 공사업</li>
+                                <li class="mb-2"><i class="fas fa-check me-2"></i>기계설비 가스공사업</li>
+                                <li><i class="fas fa-check me-2"></i>소방시설 점검 및 유지관리</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card business-card h-100 bg-primary-custom">
-                        <div class="card-body text-center p-4">
-                            <i class="fas fa-microchip fa-2x text-white mb-3"></i>
-                            <h4 class="card-title fw-bold text-white">직접생산 & R&D</h4>
-                            <p class="card-text text-start mt-3 text-white">
-                                <small>
-                                [cite_start]● 빌딩자동제어장치 / 계장제어장치 [cite: 1167]<br>
-                                [cite_start]● 광다중화장치 직접생산 [cite: 1167]<br>
-                                [cite_start]● 소프트웨어 개발 및 유지관리 [cite: 432]
-                                </small>
-                            </p>
+                    <div class="card biz-card bg-primary-custom text-white">
+                        <img src="biz-3.jpg" class="card-img-top biz-card-img opacity-75" alt="R&D 및 제조">
+                        <div class="card-body biz-card-body">
+                            <h4 class="card-title fw-bold mb-3"><i class="fas fa-microchip me-2"></i>직접생산 & R&D</h4>
+                            <p class="card-text opacity-75 mb-4">지속적인 기술 개발로 고품질의 제품을 직접 생산합니다.</p>
+                            <ul class="list-unstyled small opacity-75">
+                                <li class="mb-2"><i class="fas fa-check me-2"></i>빌딩자동제어장치 직접생산</li>
+                                <li class="mb-2"><i class="fas fa-check me-2"></i>계장제어장치 / 배전반 제조</li>
+                                <li><i class="fas fa-check me-2"></i>기업부설연구소 운영 (벤처인증)</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <section id="about" class="section-padding bg-light">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <img src="https://placehold.co/600x400?text=Company+Vision" class="img-fluid rounded shadow" alt="회사전경">
-                </div>
-                <div class="col-lg-6 ps-lg-5 mt-4 mt-lg-0">
-                    <h2 class="fw-bold mb-4">지속 가능한 미래를 선도하는<br><span class="text-primary-custom">(주)주연</span></h2>
-                    <p class="lead">"기술 설계부터 제조까지, 믿을 수 있는 직접생산 인증 기업"</p> <p>
-                        (주)주연은 2013년 설립 이래, 끊임없는 기술 개발과 혁신을 통해 성장해왔습니다. 
-                        특히 2025년에는 ISO 통합 인증을 획득하고, 소프트웨어 및 제어장치 분야의 직접생산을 등록하며 
-                        제조와 시공을 아우르는 토탈 솔루션 기업으로 도약했습니다.
-                    </p>
-                    <ul class="list-unstyled mt-3">
-                        [cite_start]<li class="mb-2"><i class="fas fa-check text-primary me-2"></i>대표이사: 조양숙 [cite: 42]</li>
-                        [cite_start]<li class="mb-2"><i class="fas fa-check text-primary me-2"></i>자본금: 6.25억원 [cite: 50]</li>
-                        [cite_start]<li class="mb-2"><i class="fas fa-check text-primary me-2"></i>여성기업 / 벤처기업 / 메인비즈 인증 [cite: 74, 76]</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    
     <section id="history" class="section-padding">
         <div class="container">
-            <h2 class="section-title">주요 실적 현황</h2>
-            <div class="table-responsive">
-                <table class="table table-hover border">
-                    <thead class="table-light">
+            <h2 class="section-title">주요 <span>실적 현황</span></h2>
+            <div class="table-responsive shadow-sm rounded">
+                <table class="table table-hover mb-0 align-middle">
+                    <thead class="bg-light">
                         <tr>
-                            <th>발주처</th>
-                            <th>공사명</th>
-                            <th>년도</th>
+                            <th class="py-3 ps-4">발주처</th>
+                            <th class="py-3">공사명</th>
+                            <th class="py-3 pe-4 text-center">년도</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>한국농어촌공사</td>
-                            <td>신천양배수장 ASS교체 및 전기설비 보수공사</td>
-                            <td>2024</td>
-                        </tr>
-                        <tr>
-                            <td>주식회사 알맥코리아</td>
-                            <td>밀양공장 전원신설 전기공사</td>
-                            <td>2024</td>
-                        </tr>
-                        <tr>
-                            <td>주식회사 에스제이에코</td>
-                            <td>신천일반산업단지 조성공사 중 전기공사</td>
-                            <td>2024</td>
-                        </tr>
-                        <tr>
-                            <td>주식회사 진로소주</td>
-                            <td>양조동 주정고 및 피뢰침 접지설비 보수</td>
-                            <td>2024</td>
-                        </tr>
-                        <tr>
-                            <td>한국전력공사</td>
-                            <td>한림생림간 도로 사촌교차로 지장전주 이설</td>
-                            <td>2024</td>
-                        </tr>
+                        <tr><td class="ps-4">한국농어촌공사</td><td>신천양배수장 ASS교체 및 전기설비 보수공사</td><td class="text-center">2024</td></tr>
+                        <tr><td class="ps-4">주식회사 알맥코리아</td><td>밀양공장 전원신설 전기공사</td><td class="text-center">2024</td></tr>
+                        <tr><td class="ps-4">주식회사 에스제이에코</td><td>신천일반산업단지 조성공사 중 전기공사</td><td class="text-center">2024</td></tr>
+                        <tr><td class="ps-4">한국전력공사</td><td>한림생림간 도로 사촌교차로 지장전주 이설</td><td class="text-center">2024</td></tr>
+                        <tr><td class="ps-4">경남은행</td><td>본점청사 주차타워 신축 소방공사</td><td class="text-center">2023</td></tr>
                     </tbody>
                 </table>
             </div>
-            <div class="text-center mt-3">
-                <p class="text-muted">* 위 실적은 주요 실적의 일부입니다.</p>
+            <div class="text-center mt-4">
+                <p class="text-muted small">* 더 많은 실적은 지명원을 통해 확인하실 수 있습니다.</p>
             </div>
         </div>
     </section>
 
-    <footer id="contact" class="bg-dark text-white pt-5 pb-3">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 mb-4">
-                    <h4 class="fw-bold mb-3">(주)주연</h4>
-                    [cite_start]<p><i class="fas fa-map-marker-alt me-2"></i>[본사] 경상남도 창원시 마산합포구 수산1길 144, 3층 (남성동) [cite: 52]</p>
-                    [cite_start]<p><i class="fas fa-industry me-2"></i>[공장] 경상남도 창원시 마산회원구 봉암북7길 21, 6동 203호 [cite: 57]</p>
+    <footer id="contact" class="bg-dark text-white pt-5">
+        <div class="container section-padding pb-0">
+            <div class="row gy-4">
+                <div class="col-lg-4">
+                    <h3 class="fw-bold mb-4 text-primary-custom">(주)주연</h3>
+                    <p class="opacity-75 mb-4">고객의 신뢰를 바탕으로 성장하는<br>인프라 전문 기업입니다.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-white opacity-50 hover-opacity-100 fs-5"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-white opacity-50 hover-opacity-100 fs-5"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
-                <div class="col-md-6 mb-4">
-                    <h4 class="fw-bold mb-3">Contact Us</h4>
-                    [cite_start]<p><i class="fas fa-phone-alt me-2"></i>Tel: 055-245-7100 [cite: 54]</p>
-                    [cite_start]<p><i class="fas fa-fax me-2"></i>Fax: 055-221-7101 [cite: 59]</p>
-                    [cite_start]<p><i class="fas fa-envelope me-2"></i>Email: juyon579@naver.com [cite: 1282]</p>
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-3">Contact Info</h5>
+                    <ul class="list-unstyled opacity-75">
+                        <li class="mb-3"><i class="fas fa-map-marker-alt me-3 text-primary-custom"></i>[본사] 창원시 마산합포구 수산1길 144, 3층</li>
+                        <li class="mb-3"><i class="fas fa-industry me-3 text-primary-custom"></i>[공장] 창원시 마산회원구 봉암북7길 21</li>
+                        <li class="mb-3"><i class="fas fa-phone-alt me-3 text-primary-custom"></i>055-245-7100 (Fax. 221-7101)</li>
+                        <li><i class="fas fa-envelope me-3 text-primary-custom"></i>juyon579@naver.com</li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <div class="bg-secondary opacity-25 rounded h-100 d-flex align-items-center justify-content-center text-center p-4">
+                        <small>약도 이미지 영역<br>(map.jpg 파일 추가 시 적용 가능)</small>
+                     </div>
                 </div>
             </div>
-            <hr class="border-secondary">
-            <div class="text-center">
-                <small>&copy; 2025 JUYEON Co., Ltd. All Rights Reserved.</small>
+            <hr class="mt-5 mb-3 opacity-25">
+            <div class="row pb-4 align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <small class="opacity-50">&copy; 2025 JUYEON Co., Ltd. All Rights Reserved.</small>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <span class="badge bg-secondary me-2">벤처기업</span>
+                    <span class="badge bg-secondary me-2">Main-Biz</span>
+                    <span class="badge bg-primary-custom">ISO 인증기업</span>
+                </div>
             </div>
         </div>
     </footer>
