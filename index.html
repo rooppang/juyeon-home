@@ -8,37 +8,59 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <style>
+<style>
         body { font-family: 'Noto Sans KR', sans-serif; word-break: keep-all; overflow-x: hidden; }
         .text-primary-custom { color: #004ea2; }
         .bg-primary-custom { background-color: #004ea2; }
-        .section-padding { padding: 100px 0; }
-        .section-title { font-weight: 800; margin-bottom: 60px; text-align: center; }
+        .section-padding { padding: 60px 0; } /* 모바일 기본 패딩 줄임 */
+        .section-title { font-weight: 800; margin-bottom: 40px; text-align: center; font-size: 1.8rem; }
         .section-title span { color: #004ea2; }
 
-        /* 개선된 히어로 섹션 */
+        /* 히어로 섹션 (메인 배너) 스타일 수정 */
         .hero-section {
-            /* 실제 이미지 파일명(main-bg.jpg) 적용 및 오버레이 강화 */
+            /* 실제 이미지 파일명(main-bg.jpg) 적용 */
             background: linear-gradient(rgba(0, 20, 50, 0.7), rgba(0, 20, 50, 0.7)), url('main-bg.jpg');
             background-size: cover;
             background-position: center;
             color: white;
-            height: 90vh; /* 화면 높이의 90% */
-            min-height: 600px;
+            /* 모바일 기본 설정 (여백 줄임) */
+            height: auto;
+            min-height: 500px;
+            padding: 100px 0 60px 0; /* 상단 패딩을 180px -> 100px로 줄임 */
             display: flex;
             align-items: center;
             text-align: center;
         }
-        .hero-title { font-size: 3.5rem; font-weight: 800; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        /* 모바일 기본 폰트 크기 (줄임) */
+        .hero-title { font-size: 2.2rem; font-weight: 800; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        .hero-desc { font-size: 1.1rem; opacity: 0.9; }
+
+        /* === PC 화면 (큰 화면)을 위한 미디어 쿼리 === */
+        @media (min-width: 992px) {
+            .section-padding { padding: 100px 0; } /* PC 패딩 원복 */
+            .section-title { margin-bottom: 60px; font-size: 2.5rem; }
+            
+            .hero-section {
+                height: 90vh;
+                min-height: 600px;
+                padding: 0; /* PC에서는 flex 정렬을 사용하므로 패딩 불필요 */
+            }
+            .hero-title { font-size: 3.5rem; } /* PC 폰트 크기 원복 */
+            .hero-desc { font-size: 1.25rem; }
+        }
 
         /* 개선된 사업분야 카드 */
         .biz-card { border: none; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: transform 0.3s; height: 100%; }
         .biz-card:hover { transform: translateY(-10px); }
-        .biz-card-img { height: 250px; object-fit: cover; }
-        .biz-card-body { padding: 30px; }
+        .biz-card-img { height: 200px; object-fit: cover; } /* 모바일 이미지 높이 조정 */
+        @media (min-width: 992px) { .biz-card-img { height: 250px; } } /* PC 이미지 높이 원복 */
+        .biz-card-body { padding: 25px; }
 
         /* CEO 섹션 스타일 */
         .ceo-img { border-radius: 15px; box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
+
+        /* 모달 스타일 보완 */
+        .modal-header .btn-close { margin: -0.5rem -0.5rem -0.5rem auto; }
     </style>
 </head>
 <body>
@@ -877,6 +899,7 @@
 </body>
 
 </html>
+
 
 
 
