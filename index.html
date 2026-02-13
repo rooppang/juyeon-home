@@ -2,14 +2,20 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>(주)주연 - 글로벌 인프라사업 전문기업</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
 <style>
-        body { font-family: 'Noto Sans KR', sans-serif; word-break: keep-all; overflow-x: hidden; }
+       /* html과 body 모두에 가로 스크롤 방지 및 가로 폭 100% 강제 지정 */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    font-family: 'Noto Sans KR', sans-serif;
+    word-break: keep-all;
+}
         .text-primary-custom { color: #004ea2; }
         .bg-primary-custom { background-color: #004ea2; }
         .section-padding { padding: 60px 0; } /* 모바일 기본 패딩 줄임 */
@@ -242,7 +248,7 @@
     <section class="section-padding bg-white border-bottom">
         <div class="container">
             <h2 class="section-title">조직 및 <span>인력 현황</span></h2>
-            <div class="row g-5 align-items-center">
+            <div class="row gy-5 gx-0 gx-lg-5 align-items-center">
                 <div class="col-lg-4">
                     <div class="p-4 bg-light rounded-4 border shadow-sm h-100 d-flex flex-column justify-content-center">
                         <div class="d-flex flex-column gap-4">
@@ -899,6 +905,7 @@
 </body>
 
 </html>
+
 
 
 
