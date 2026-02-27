@@ -259,6 +259,23 @@ html, body {
                         </div>
                     </div>
                 </div>
+               <div class="col-lg-4 col-md-6">
+                    <div class="card biz-card h-100" data-bs-toggle="modal" data-bs-target="#evModal" style="cursor: pointer;">
+                        <img src="biz-ev.jpg" class="card-img-top biz-card-img" alt="전기차충전">
+                        <div class="card-body biz-card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold mb-3"><i class="fas fa-charging-station text-info me-2"></i>전기차 충전 솔루션</h5>
+                            <p class="card-text text-muted small mb-3">E-Mobility 인프라 구축 및 운영 관리</p>
+                            <ul class="list-unstyled small text-secondary mb-4">
+                                <li><i class="fas fa-check me-2"></i>급속/완속 충전소 시공</li>
+                                <li><i class="fas fa-check me-2"></i>충전기 유지보수(O&M)</li>
+                            </ul>
+                            <div class="mt-auto pt-3 border-top d-flex justify-content-between align-items-center text-primary-custom small fw-bold">
+                                <span>상세내용 보기</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
          
            </div>
         </div>
@@ -1057,12 +1074,88 @@ html, body {
                                     <p class="text-muted small mb-0">(주)주연은 설치 후에도 끝까지 책임지는 든든한 파트너가 되겠습니다.</p>
                                 </div>
                             </div>
-
                         </div> </div>
+                    
                 </div>
                 <div class="modal-footer bg-light justify-content-center">
                     <button type="button" class="btn btn-secondary px-5" data-bs-dismiss="modal">닫기</button>
                     <a href="#contact" class="btn btn-success px-5" onclick="bootstrap.Modal.getInstance(document.getElementById('solarModal')).hide();">시공 및 견적 문의</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="evModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header bg-info text-dark">
+                    <h5 class="modal-title fw-bold"><i class="fas fa-bolt me-2"></i>EV Charging Infrastructure</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <div class="p-5 text-center text-white" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('biz-ev.jpg'); background-size: cover; background-position: center;">
+                        <h2 class="display-5 fw-bold mb-3">Smart E-Mobility Partner</h2>
+                        <p class="lead opacity-90">
+                            친환경 전기차 시대의 필수 인프라.<br>
+                            (주)주연은 <strong>전기공사 면허</strong>와 <strong>통신 기술</strong>을 결합하여<br>
+                            가장 안전하고 효율적인 충전 환경을 구축합니다.
+                        </p>
+                    </div>
+
+                    <div class="container py-5">
+                        <div class="row g-5">
+                            <div class="col-lg-6">
+                                <h4 class="fw-bold text-info mb-4 border-bottom pb-2">인프라 구축 (Installation)</h4>
+                                <div class="d-flex mb-4">
+                                    <div class="flex-shrink-0"><i class="fas fa-plug fa-2x text-info"></i></div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h5 class="fw-bold">급속/완속 충전기 설치</h5>
+                                        <p class="text-muted small">아파트, 관공서, 마트 등 주차 면수에 따른 최적의 충전기(7kW~100kW급) 설계 및 시공.</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex mb-4">
+                                    <div class="flex-shrink-0"><i class="fas fa-project-diagram fa-2x text-info"></i></div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h5 class="fw-bold">전력 간선 및 통신 공사</h5>
+                                        <p class="text-muted small">한전 불입금 처리부터 트레이 배관, 입선, 충전기 통신 개통까지 원스톱 수행.</p>
+                                    </div>
+                                </div>
+                                <div class="alert alert-info border-0 rounded shadow-sm">
+                                    <i class="fas fa-info-circle me-2"></i><strong>정부 보조금 사업 지원:</strong> 환경부 및 지자체 충전기 설치 지원 사업 컨설팅 제공.
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <h4 class="fw-bold text-secondary mb-4 border-bottom pb-2">운영 및 유지관리 (O&M)</h4>
+                                <div class="row g-3">
+                                    <div class="col-6">
+                                        <div class="p-4 bg-light rounded text-center h-100">
+                                            <i class="fas fa-search-plus fa-3x text-secondary mb-3"></i>
+                                            <h6 class="fw-bold">정기 점검</h6>
+                                            <small class="text-muted">전기안전관리자와 연계한<br>월/분기별 안전 점검</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="p-4 bg-light rounded text-center h-100">
+                                            <i class="fas fa-wifi fa-3x text-secondary mb-3"></i>
+                                            <h6 class="fw-bold">장애 관제</h6>
+                                            <small class="text-muted">통신 오류 및<br>커넥터 파손 즉시 대응</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="p-4 border border-info rounded bg-white shadow-sm mt-2">
+                                            <h6 class="fw-bold text-dark mb-2">💡 캐노피 및 주차 라인 시공</h6>
+                                            <p class="text-muted small mb-0">충전기 보호를 위한 비가림막(캐노피) 제작 및 전기차 전용 주차구역 도색까지 일괄 시공합니다.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer bg-light justify-content-center">
+                    <button type="button" class="btn btn-secondary px-5" data-bs-dismiss="modal">닫기</button>
+                    <a href="#contact" class="btn btn-info px-5 text-white" onclick="bootstrap.Modal.getInstance(document.getElementById('evModal')).hide();">설치 상담 문의</a>
                 </div>
             </div>
         </div>
@@ -1072,6 +1165,7 @@ html, body {
 </body>
 
 </html>
+
 
 
 
